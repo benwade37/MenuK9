@@ -3,12 +3,13 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from .models import Recipe
 
 from . import models
 
 class RecipeListView(ListView):
   model = models.Recipe
-  template_name = 'recipes/home.html'
+  template_name = 'recipes/all_recipes.html'
   context_object_name = 'recipes'
 
 class RecipeDetailView(DetailView):
@@ -44,3 +45,10 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 def about(request):
     return render(request, 'recipes/about.html', {'title': 'About'})
+
+def all_recipes(request):
+    recipes = Recipe.objects.all()  # Fetch all recipes from the database
+    return render(request, 'recipes/all_recipes.html', {'recipes': recipes})
+
+def home(request):
+    return render(request, 'recipes/home.html', {'title': 'Home'})

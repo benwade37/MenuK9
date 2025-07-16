@@ -7,12 +7,12 @@ from .models import Recipe
 
 from . import models
 
-class RecipeListView(ListView):
+class RecipeListView(LoginRequiredMixin, ListView):
   model = models.Recipe
   template_name = 'recipes/all_recipes.html'
   context_object_name = 'recipes'
 
-class RecipeDetailView(DetailView):
+class RecipeDetailView(LoginRequiredMixin, DetailView):
   model = models.Recipe
 
 class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

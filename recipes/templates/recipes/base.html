@@ -33,13 +33,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            {% if user.is_authenticated %}
             <li class="nav-item">
               <a
                 class="nav-link"
                 aria-current="page"
                 href="{% url 'recipes-all_recipes' %}"
-                >All Recipes</a
-              >
+                >All Recipes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'recipes-about' %}">About</a>
@@ -47,6 +47,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'recipes-create' %}">Add Recipe</a>
             </li>
+            {% endif %}
           </ul>
         </div>
         <div class="navbar-nav">

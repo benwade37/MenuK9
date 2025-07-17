@@ -1,10 +1,11 @@
-<!-- recipes/templates/recipes/home.html --> 
-<!-- recipes/templates/recipes/home.html --> 
 {% extends "recipes/base.html" %}
-<!-- -->
+{% load static %}
 {% block content %}
-
-<h1>Welcome to #Whoseagooddoogie</h1>
-<p>#Whoseagooddoogie is your go-to platform for sharing and discovering recipes for your furry friends. Explore our collection of recipes, add your own, and connect with other pet lovers.</p>
-<a href="{% url 'recipes-all_recipes' %}" class="btn btn-primary">View All Recipes</a>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>#Whoseagooddoogie</h1>
+        <p>Your go-to platform for sharing and discovering recipes for your dog. Explore our collection of recipes, add your own, and connect with other pet lovers.</p>
+        <a href="{% url 'recipes-all_recipes' %}" class="btn btn-primary">View All Recipes</a>
+    </div>
+</div>
 {% endblock content %}

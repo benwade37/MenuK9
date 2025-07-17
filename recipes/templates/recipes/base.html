@@ -1,20 +1,24 @@
 <!-- # templates/recipes/base.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% if title %}
-    <title>Django Recipes - {{title}}</title>
+    <title>Whoseagooddoggie - {{title}}</title>
     {% else %}
-    <title>Django Recipes</title>
+    <title>Whoseagooddoggie Recipes</title>
     {% endif %}
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
+    <!-- Font Awesome Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -70,6 +74,27 @@
       <div class="alert alert-{{ message.tags }}">{{ message }}</div>
       {% endfor %} {% endif %} {% block content %} {% endblock %}
     </div>
+    <footer>
+      <div class="container text-center">
+        <!-- Social Media Links -->
+        <div class="mb-3">
+          <a href="https://www.facebook.com" target="_blank" class="text-white mx-2">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" class="text-white mx-2">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="https://www.youtube.com" target="_blank" class="text-white mx-2">
+            <i class="fab fa-youtube fa-lg"></i>
+          </a>
+          <a href="https://www.twitter.com" target="_blank" class="text-white mx-2">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+        <!-- Copyright -->
+        <div>
+          <p class="mb-0">&copy; 2025 #Whoseagooddoggie. All rights reserved.</p>
+        </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

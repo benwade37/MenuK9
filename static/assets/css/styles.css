@@ -1,0 +1,108 @@
+/* Ensure the hero image fills the entire viewport */
+.hero-image {
+    background-image: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg');
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 100%; /* Ensures the image spans the full width of the viewport */
+    height: calc(100vh - 56px); /* Adjusts height to account for the navbar (if fixed) */
+    position: relative; /* Allows positioning of the text */
+    overflow: hidden; /* Prevents content overflow */
+    margin: 0; /* Removes any default margins */
+    padding: 20px; /* Adds padding inside the hero image */
+    padding-bottom: 50px; /* Adds extra space below the hero image */
+    border: 5px solid #6b7623; /* Adds a border around the hero image */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
+    border-radius: 10px; /* Optional: Adds rounded corners to the border */
+}
+
+/* Ensure the navbar and footer work seamlessly with the hero image */
+.navbar {
+    background-color: #6b7623;
+    color: white;
+    z-index: 10; /* Ensures the navbar stays above the hero image */
+    position: fixed; /* Keeps the navbar fixed at the top */
+    width: 100%; /* Ensures the navbar spans the full width */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%; /* Centers the text vertically */
+    left: 50%; /* Centers the text horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the text's dimensions */
+    color: white; /* Makes the text color white for better visibility */
+    text-align: center; /* Centers the text */
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for better readability */
+    padding: 20px; /* Adds padding around the text */
+    border-radius: 10px; /* Optional: Rounds the corners of the text background */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; /* Bold for headings */
+}
+
+p, a, button {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; /* Regular weight for text */
+}
+
+/* Increase font size for the navigation bar links */
+.navbar .nav-link {
+    font-size: 1.2rem; /* Adjust the size as needed (e.g., 1.2rem = 120% of the base font size) */
+    font-weight: 400; /* Optional: Adjust the weight for better readability */
+}
+
+/* Optional: Increase the font size for the brand/logo */
+.navbar-brand {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    font-weight: 700; /* Make it bold */
+}
+
+/* Ensure the footer stays fixed at the bottom of the page */
+footer {
+    background-color: #6b7623; /* Dark gray background */
+    color: white; /* White text */
+    text-align: center; /* Centers the footer content */
+    padding: 20px; /* Adds padding to the footer */
+    position: fixed; /* Fixes the footer at the bottom */
+    bottom: 0; /* Positions the footer at the bottom of the viewport */
+    width: 100%; /* Ensures the footer spans the full width */
+    z-index: 10; /* Ensures the footer stays above other elements */
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer i {
+    font-size: 3rem; /* Adjust the size as needed (e.g., 2rem = 200% of the base font size) */
+    margin: 0 5px; /* Adds spacing between icons */
+    color: #ffffff; /* Ensures the icons remain white */
+}
+
+footer a:hover {
+    color: #f8f9fa; /* Slightly lighter color on hover */
+}
+
+footer img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+footer .mb-3 {
+    margin-bottom: 20px; /* Adds space below the social media icons */
+}
+
+footer p {
+    margin: 0; /* Ensures no extra margin for the copyright text */
+    font-size: 0.9rem; /* Optional: Adjust the font size for better readability */
+}

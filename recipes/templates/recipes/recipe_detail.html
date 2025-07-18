@@ -1,10 +1,12 @@
 <!-- # template/recipes/recipe_detail.html -->
 {% extends "recipes/base.html" %}
-<!-- -->
 {% block content %}
-<h1>Recipe # {{object.id}}</h1>
+<h1>Recipe # {{ object.id }}</h1>
 <div class="card my-4">
   <div class="card-body">
+    {% if object.image %}
+    <img src="{{ object.image.url }}" alt="{{ object.title }}" class="img-fluid">
+    {% endif %}
     <h5 class="card-title">{{ object.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{ object.author }}</h6>
     <p class="card-text">{{ object.description }}</p>
@@ -19,5 +21,4 @@
     <a class="btn btn-outline-danger" href="{% url 'recipes-delete' object.id %}">Delete</a>
 </div>
 {% endif %}
-<!-- -->
 {% endblock content %}

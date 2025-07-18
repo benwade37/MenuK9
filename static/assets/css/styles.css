@@ -42,7 +42,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url('/static/assets/images/Paws3.jpg'); /* Path to the image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-position: center; /* Centers the image */
+    color: #fff; /* Optional: Adjust text color for better visibility */
+    padding-bottom: 200px; /* Matches the height of the footer */
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
@@ -71,11 +79,12 @@ footer {
     background-color: #6b7623; /* Dark gray background */
     color: white; /* White text */
     text-align: center; /* Centers the footer content */
-    padding: 20px; /* Adds padding to the footer */
+    padding: 20px; /* Adds padding inside the footer */
     position: fixed; /* Fixes the footer at the bottom */
     bottom: 0; /* Positions the footer at the bottom of the viewport */
     width: 100%; /* Ensures the footer spans the full width */
     z-index: 10; /* Ensures the footer stays above other elements */
+    height: 100px; /* Sets a fixed height for the footer */
 }
 
 footer a {
@@ -105,4 +114,27 @@ footer .mb-3 {
 footer p {
     margin: 0; /* Ensures no extra margin for the copyright text */
     font-size: 0.9rem; /* Optional: Adjust the font size for better readability */
+}
+
+.card {
+    padding: 20px; /* Adds more padding inside the card */
+    margin: 20px auto; /* Adds space between cards and centers them */
+    width: 80%; /* Adjusts the width of the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better visibility */
+    border-radius: 10px; /* Adds rounded corners */
+    font-size: 1.2rem; /* Increases the font size inside the card */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Makes the title larger */
+    font-weight: bold; /* Makes the title bold */
+}
+
+.card-subtitle {
+    font-size: 1.2rem; /* Adjusts the subtitle size */
+    color: #6c757d; /* Keeps the muted color for subtitles */
+}
+
+.card-text {
+    font-size: 1.1rem; /* Adjusts the text size */
 }

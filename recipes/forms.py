@@ -1,5 +1,5 @@
-from .models import Recipe, Comment, Baker
 from django import forms
+from .models import Recipe
 from django_summernote.widgets import SummernoteWidget
 from cloudinary.forms import CloudinaryFileField
 
@@ -8,7 +8,7 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'image', 'ingredients', 'instructions',
-                  'time_required', 'categories', 'excerpt']
+                  'time_required', 'categories', 'excerpt'] # Include the image field
         widgets = {
             'ingredients': SummernoteWidget(),
             'instructions': SummernoteWidget(),
@@ -40,17 +40,7 @@ class CommentForm(forms.ModelForm):
 class LikeForm(forms.Form):
     pass
 
-
-class ProfileForm(forms.ModelForm):
+lass RecipeForm(forms.ModelForm):
     class Meta:
-        model = Baker
-        fields = ['bio', 'profile_pic', 'user_type']
-        widgets = {
-            'bio': SummernoteWidget(),
-            'profile_pic': CloudinaryFileField().widget,
-        }
-        labels = {
-            'bio': 'Biography (A little about yourself)',
-            'profile_pic': 'Profile Picture',
-            'user_type': 'User Type',
-        }
+        model = Recipe
+        fields = ['title', 'description', 'image']  # Include the image field

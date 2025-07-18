@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Recipe(models.Model):
@@ -10,6 +11,7 @@ class Recipe(models.Model):
   author = models.ForeignKey(User, on_delete=models.CASCADE)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
+  image = CloudinaryField('image', blank=True, null=True)  # Cloudinary image field
 
   def get_absolute_url(self):
       return reverse("recipes-detail", kwargs={"pk": self.pk})

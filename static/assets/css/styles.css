@@ -220,10 +220,19 @@ footer p {
     font-size: 0.9rem; /* Optional: Adjust the font size for better readability */
 }
 
+.card-container {
+    display: flex; /* Enables flexbox layout */
+    flex-wrap: wrap; /* Allows cards to wrap to the next row */
+    gap: 20px; /* Adds space between cards */
+    justify-content: center; /* Centers the cards horizontally */
+}
+
 .card {
-    padding: 20px; /* Adds more padding inside the card */
-    margin: 20px auto; /* Adds space between cards and centers them */
-    width: 80%; /* Adjusts the width of the card */
+    flex: 1 1 calc(50% - 20px); /* Makes each card take up 50% of the container width minus the gap */
+    max-width: calc(50% - 20px); /* Ensures cards don't exceed 50% of the container width */
+    box-sizing: border-box; /* Ensures padding and border are included in the card's dimensions */
+    padding: 20px; /* Adds padding inside the card */
+    margin: 0; /* Removes default margins */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better visibility */
     border-radius: 10px; /* Adds rounded corners */
     font-size: 1.2rem; /* Increases the font size inside the card */

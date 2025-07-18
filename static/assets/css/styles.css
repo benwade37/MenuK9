@@ -5,12 +5,12 @@
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     width: 100%; /* Ensures the image spans the full width of the viewport */
-    height: calc(100vh - 56px); /* Adjusts height to account for the navbar (if fixed) */
+    height: 80vh; /* Adjusts height to account for the navbar (if fixed) */
     position: relative; /* Allows positioning of the text */
     overflow: hidden; /* Prevents content overflow */
     margin: 0; /* Removes any default margins */
     padding: 20px; /* Adds padding inside the hero image */
-    padding-bottom: 50px; /* Adds extra space below the hero image */
+    padding-bottom: 30px; /* Adds extra space below the hero image */
     border: 5px solid #6b7623; /* Adds a border around the hero image */
     box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
     border-radius: 10px; /* Optional: Adds rounded corners to the border */
@@ -18,11 +18,12 @@
 
 /* Ensure the navbar and footer work seamlessly with the hero image */
 .navbar {
-    background-color: #6b7623;
-    color: white;
+    background-color: #65362d; /* Replace with your desired color */
+    color: white; /* Ensures the text remains visible */
     z-index: 10; /* Ensures the navbar stays above the hero image */
     position: fixed; /* Keeps the navbar fixed at the top */
     width: 100%; /* Ensures the navbar spans the full width */
+    padding: 20px 0; /* Increases the vertical padding to make the navbar deeper */
 }
 
 .hero-text {
@@ -51,6 +52,109 @@ body {
     padding-bottom: 200px; /* Matches the height of the footer */
 }
 
+.about-page {
+    max-width: 800px; /* Limits the width of the content */
+    margin: 0 auto; /* Centers the content */
+    padding: 20px; /* Adds padding around the content */
+    font-family: 'Lato', sans-serif; /* Ensures consistent font styling */
+}
+
+.about-intro
+{
+    text-align: center; /* Centers the introductory text */
+    margin-bottom: 40px; /* Adds space below the intro section */
+}
+
+.about-page section {
+    margin-bottom: 40px; /* Adds space between sections */
+    padding: 20px; /* Adds padding inside each section */
+    border: 1px solid #ddd; /* Adds a subtle border around sections */
+    border-radius: 10px; /* Rounds the corners of the sections */
+    background-color: #f9f9f9; /* Adds a light background color */
+}
+
+.about-page h1, .about-page h2 {
+    color: #65362d; /* Sets a custom color for headings */
+    font-weight: 700; /* Makes headings bold */
+    margin-bottom: 20px; /* Adds space below headings */
+}
+
+.about-page p {
+    font-size: 1.1rem; /* Makes the text slightly larger */
+    line-height: 1.6; /* Improves readability */
+    color: #333; /* Sets a dark color for text */
+}
+
+.about-page a {
+    color: #65362d; /* Sets a custom color for links */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.about-page a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+.dropdown-toggle {
+    background-color: #65362d; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Removes default border */
+    padding: 10px 20px; /* Adds padding to the button */
+    font-size: 1rem; /* Adjusts the font size */
+    cursor: pointer; /* Changes the cursor to a pointer */
+    border-radius: 5px; /* Adds rounded corners */
+}
+
+.dropdown-toggle:hover {
+    background-color: #4a2a1f; /* Darker color on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hides the list by default */
+    margin-top: 10px; /* Adds space between the button and the list */
+    padding: 10px; /* Adds padding inside the list */
+    border: 1px solid #ddd; /* Adds a subtle border around the list */
+    border-radius: 5px; /* Adds rounded corners */
+    background-color: #f9f9f9; /* Adds a light background color */
+}
+
+.dropdown-content li {
+    margin-bottom: 5px; /* Adds space between list items */
+    font-size: 1rem; /* Adjusts the font size */
+}
+
+.about-comp {
+    background-color: #ffd700; /* Adds a bright gold background to make it stand out */
+    color: #65362d; /* Sets a complementary text color */
+    padding: 30px; /* Adds padding inside the section */
+    border: 3px solid #65362d; /* Adds a bold border */
+    border-radius: 15px; /* Rounds the corners of the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    text-align: center; /* Centers the text */
+    margin: 40px auto; /* Adds space around the section and centers it */
+    max-width: 800px; /* Limits the width of the section */
+}
+
+.about-comp h2 {
+    font-size: 2rem; /* Makes the heading larger */
+    font-weight: 700; /* Makes the heading bold */
+    margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.about-comp p {
+    font-size: 1.2rem; /* Makes the text slightly larger */
+    line-height: 1.6; /* Improves readability */
+    margin-bottom: 15px; /* Adds space below each paragraph */
+}
+
+.about-comp strong {
+    font-size: 1.3rem; /* Makes the "Good luck!" text larger */
+    font-weight: bold; /* Emphasizes the text */
+}
+
+.about-comp em {
+    font-size: 1.1rem; /* Styles the "Whoseagooddoggie Team" text */
+    font-style: italic; /* Adds emphasis with italics */
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
@@ -64,13 +168,13 @@ p, a, button {
 
 /* Increase font size for the navigation bar links */
 .navbar .nav-link {
-    font-size: 1.2rem; /* Adjust the size as needed (e.g., 1.2rem = 120% of the base font size) */
-    font-weight: 400; /* Optional: Adjust the weight for better readability */
+    font-size: 1.5rem; /* Adjust the size as needed (e.g., 1.2rem = 120% of the base font size) */
+    font-weight: 500; /* Optional: Adjust the weight for better readability */
 }
 
 /* Optional: Increase the font size for the brand/logo */
 .navbar-brand {
-    font-size: 1.5rem; /* Adjust the size as needed */
+    font-size: 2rem; /* Adjust the size as needed */
     font-weight: 700; /* Make it bold */
 }
 

@@ -21,7 +21,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="{% url 'recipes-home' %}">#Whoseagooddoogie</a>
         <button
@@ -110,5 +110,15 @@
       integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function toggleDropdown() {
+          const list = document.getElementById('benefits-list');
+          if (list.style.display === 'none' || list.style.display === '') {
+              list.style.display = 'block'; // Show the list
+          } else {
+              list.style.display = 'none'; // Hide the list
+          }
+      }
+  </script>
   </body>
 </html>

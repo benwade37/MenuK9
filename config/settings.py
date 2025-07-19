@@ -19,11 +19,8 @@ import cloudinary.uploader
 import cloudinary.api
 import os
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -34,7 +31,7 @@ SECRET_KEY = 'django-insecure-o51j#n&@(rsf_(hpu8!o8ob68a@v+@-vqhbc@&gi5^uu#9n2^&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','menuk9-app.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 

@@ -22,6 +22,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('recipes.urls')),
+    path('recipe/', include('recipes.urls')),  # This maps /recipe/ to recipes.urls
     path('register/', user_views.register, name="user-register"), # Include the URLs from the recipes app
  # new urls
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name="user-login"),

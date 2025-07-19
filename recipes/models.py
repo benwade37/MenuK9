@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 class Recipe(models.Model):
     title = models.CharField(max_length=100)

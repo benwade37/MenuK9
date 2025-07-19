@@ -1,1 +1,1 @@
-web: gunicorn MenuK9.wsgi --log-file -
+web: gunicorn config.wsgi

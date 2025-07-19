@@ -1,4 +1,5 @@
 # recipes/urls.py 
+from .views import RecipeDetailView
 from django.urls import path
 from . import views
 

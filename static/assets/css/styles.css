@@ -63,6 +63,7 @@ body {
 {
     text-align: center; /* Centers the introductory text */
     margin-bottom: 40px; /* Adds space below the intro section */
+    background-color: #dcb0a5;
 }
 
 .about-page section {
@@ -70,7 +71,7 @@ body {
     padding: 20px; /* Adds padding inside each section */
     border: 1px solid #ddd; /* Adds a subtle border around sections */
     border-radius: 10px; /* Rounds the corners of the sections */
-    background-color: #f9f9f9; /* Adds a light background color */
+    background-color: #dcb0a5; /* Adds a light background color */
 }
 
 .about-page h1, .about-page h2 {

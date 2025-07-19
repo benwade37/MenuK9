@@ -252,3 +252,11 @@ footer p {
 .card-text {
     font-size: 1.1rem; /* Adjusts the text size */
 }
+
+.recipe-image {
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    max-height: 200px; /* Restricts the height of the image */
+    object-fit: cover; /* Ensures the image is scaled proportionally */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-bottom: 20px; /* Adds space below the image */
+}

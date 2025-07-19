@@ -22,7 +22,7 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
 
 class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Recipe
-    success_url = reverse_lazy('recipes/all_recipes.html')
+    success_url = reverse_lazy('recipes-all_recipes')
 
     def test_func(self):
         recipe = self.get_object()

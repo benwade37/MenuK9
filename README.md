@@ -28,17 +28,16 @@ Target Audience
 
 Dog lovers and carers. And hopefully, dogs.
 
-Wireframes
+Wireframes:
 
-Home page desktop
+Home page desktop 
+![Wireframe Desktop](static/assets/images/WireframeDesktop.png)
 
 Mobile Home page
+![Wireframe Mobike](static/assets/images/WireframeMob.png)
 
 About Page
-
-Create Recipe Page
-
-Recipe Gallery
+![Wireframe Form](static/assets/images/WireframeForm.png)
 
 Entity Relationship Diagram
 

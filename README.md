@@ -16,6 +16,10 @@ Purpose
 
 This site aims to lightheartedly drive home the message that good food for all dogs can be better for owners and their pets, by suggesting healthy canine meals that can increase longevity, boost the immune system, reduce obesity and illness and arguably reduce vet fees.
 
+Description
+
+![site on various devices] (static/assets/images/Devices.png)
+
 Target Audience
 
 Dog lovers and carers. And hopefully, dogs.

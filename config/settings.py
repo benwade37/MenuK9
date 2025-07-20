@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o51j#n&@(rsf_(hpu8!o8ob68a@v+@-vqhbc@&gi5^uu#9n2^&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'menuk9-e11bf1538288.herokuapp.com',  # use your actual Heroku URL here
@@ -103,8 +103,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'menuk9',
+        'USER': 'benjaminwade',
+        'PASSWORD': 'yourpassword',  # ← match what you used earlier
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
+
 
 CLOUDINARY = {
     'cloud_name': os.environ.get('CLOUDINARY_CLOUD_NAME'),

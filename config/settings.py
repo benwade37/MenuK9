@@ -17,6 +17,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +31,11 @@ SECRET_KEY = 'django-insecure-o51j#n&@(rsf_(hpu8!o8ob68a@v+@-vqhbc@&gi5^uu#9n2^&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.heroku.app', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = [
+    'menuk9-e11bf1538288.herokuapp.com',  # use your actual Heroku URL here
+    'localhost',
+    '127.0.0.1'
+]
 
 # Application definition
 
@@ -98,16 +103,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 CLOUDINARY = {
-    'cloud_name': 'your_cloud_name',
-    'api_key': 'your_api_key',
-    'api_secret': 'your_api_secret',
+    'cloud_name': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'api_key': os.environ.get('CLOUDINARY_API_KEY'),
+    'api_secret': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
 # Password validation
@@ -154,3 +156,5 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

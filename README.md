@@ -22,7 +22,7 @@ This site aims to lightheartedly drive home the message that good food for all d
 
 Description
 
-![site on various devices] (static/assets/images/Devices.png)
+![site on various devices](static/assets/images/Devices.png)
 
 Target Audience
 
@@ -42,15 +42,11 @@ Recipe Gallery
 
 Entity Relationship Diagram
 
-For simplicity and to cater to the needs of different user types (all dog lovers and owners) as well as keeping the site intuitive, clean and functional, the site uses a generic user model with a one to many relationship: one user can create many recipes, and they can also rate as many recipes as they would like. PLEASE NOTE THE ARROW FROM THE ID IN USER IS MEANT TO GO TO USER ID IN RECIPE.
+![Entity Relationship Model](static/assets/images/ERM.png)
 
-Entity Relationship Diagram
+For simplicity and to cater to the needs of different user types (all dog lovers and owners) as well as keeping the site intuitive, clean and functional, the site uses a generic user model with a one to many relationship: one user can create many recipes.
 
-Flow diagrams
-
-Basic
-
-More advanced
+Use of AI:
 
 Use of AI Artificial Intelligence played a significant role in the development of this project. Here are some ways AI was utilised:
 

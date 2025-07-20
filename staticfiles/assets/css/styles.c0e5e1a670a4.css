@@ -1,0 +1,262 @@
+/* Ensure the hero image fills the entire viewport */
+.hero-image {
+    background-image: url("/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.0a8917d1da66.jpg");
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 100%; /* Ensures the image spans the full width of the viewport */
+    height: 80vh; /* Adjusts height to account for the navbar (if fixed) */
+    position: relative; /* Allows positioning of the text */
+    overflow: hidden; /* Prevents content overflow */
+    margin: 0; /* Removes any default margins */
+    padding: 20px; /* Adds padding inside the hero image */
+    padding-bottom: 30px; /* Adds extra space below the hero image */
+    border: 5px solid #6b7623; /* Adds a border around the hero image */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
+    border-radius: 10px; /* Optional: Adds rounded corners to the border */
+}
+
+/* Ensure the navbar and footer work seamlessly with the hero image */
+.navbar {
+    background-color: #65362d; /* Replace with your desired color */
+    color: white; /* Ensures the text remains visible */
+    z-index: 10; /* Ensures the navbar stays above the hero image */
+    position: fixed; /* Keeps the navbar fixed at the top */
+    width: 100%; /* Ensures the navbar spans the full width */
+    padding: 20px 0; /* Increases the vertical padding to make the navbar deeper */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%; /* Centers the text vertically */
+    left: 50%; /* Centers the text horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the text's dimensions */
+    color: white; /* Makes the text color white for better visibility */
+    text-align: center; /* Centers the text */
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for better readability */
+    padding: 20px; /* Adds padding around the text */
+    border-radius: 10px; /* Optional: Rounds the corners of the text background */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("/static/assets/images/Paws2.e3cde99dd4b4.jpg"); /* Path to the image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-position: center; /* Centers the image */
+    color: #fff; /* Optional: Adjust text color for better visibility */
+    padding-bottom: 200px; /* Matches the height of the footer */
+}
+
+.about-page {
+    max-width: 800px; /* Limits the width of the content */
+    margin: 0 auto; /* Centers the content */
+    padding: 20px; /* Adds padding around the content */
+    font-family: 'Lato', sans-serif; /* Ensures consistent font styling */
+}
+
+.about-intro
+{
+    text-align: center; /* Centers the introductory text */
+    margin-bottom: 40px; /* Adds space below the intro section */
+    background-color: #dcb0a5;
+}
+
+.about-page section {
+    margin-bottom: 40px; /* Adds space between sections */
+    padding: 20px; /* Adds padding inside each section */
+    border: 1px solid #ddd; /* Adds a subtle border around sections */
+    border-radius: 10px; /* Rounds the corners of the sections */
+    background-color: #dcb0a5; /* Adds a light background color */
+}
+
+.about-page h1, .about-page h2 {
+    color: #65362d; /* Sets a custom color for headings */
+    font-weight: 700; /* Makes headings bold */
+    margin-bottom: 20px; /* Adds space below headings */
+}
+
+.about-page p {
+    font-size: 1.1rem; /* Makes the text slightly larger */
+    line-height: 1.6; /* Improves readability */
+    color: #333; /* Sets a dark color for text */
+}
+
+.about-page a {
+    color: #65362d; /* Sets a custom color for links */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.about-page a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+.dropdown-toggle {
+    background-color: #65362d; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Removes default border */
+    padding: 10px 20px; /* Adds padding to the button */
+    font-size: 1rem; /* Adjusts the font size */
+    cursor: pointer; /* Changes the cursor to a pointer */
+    border-radius: 5px; /* Adds rounded corners */
+}
+
+.dropdown-toggle:hover {
+    background-color: #4a2a1f; /* Darker color on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hides the list by default */
+    margin-top: 10px; /* Adds space between the button and the list */
+    padding: 10px; /* Adds padding inside the list */
+    border: 1px solid #ddd; /* Adds a subtle border around the list */
+    border-radius: 5px; /* Adds rounded corners */
+    background-color: #f9f9f9; /* Adds a light background color */
+}
+
+.dropdown-content li {
+    margin-bottom: 5px; /* Adds space between list items */
+    font-size: 1rem; /* Adjusts the font size */
+}
+
+.about-comp {
+    background-color: #ffd700; /* Adds a bright gold background to make it stand out */
+    color: #65362d; /* Sets a complementary text color */
+    padding: 30px; /* Adds padding inside the section */
+    border: 3px solid #65362d; /* Adds a bold border */
+    border-radius: 15px; /* Rounds the corners of the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    text-align: center; /* Centers the text */
+    margin: 40px auto; /* Adds space around the section and centers it */
+    max-width: 800px; /* Limits the width of the section */
+}
+
+.about-comp h2 {
+    font-size: 2rem; /* Makes the heading larger */
+    font-weight: 700; /* Makes the heading bold */
+    margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.about-comp p {
+    font-size: 1.2rem; /* Makes the text slightly larger */
+    line-height: 1.6; /* Improves readability */
+    margin-bottom: 15px; /* Adds space below each paragraph */
+}
+
+.about-comp strong {
+    font-size: 1.3rem; /* Makes the "Good luck!" text larger */
+    font-weight: bold; /* Emphasizes the text */
+}
+
+.about-comp em {
+    font-size: 1.1rem; /* Styles the "Whoseagooddoggie Team" text */
+    font-style: italic; /* Adds emphasis with italics */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; /* Bold for headings */
+}
+
+p, a, button {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; /* Regular weight for text */
+}
+
+/* Increase font size for the navigation bar links */
+.navbar .nav-link {
+    font-size: 1.5rem; /* Adjust the size as needed (e.g., 1.2rem = 120% of the base font size) */
+    font-weight: 500; /* Optional: Adjust the weight for better readability */
+}
+
+/* Optional: Increase the font size for the brand/logo */
+.navbar-brand {
+    font-size: 2rem; /* Adjust the size as needed */
+    font-weight: 700; /* Make it bold */
+}
+
+/* Ensure the footer stays fixed at the bottom of the page */
+footer {
+    background-color: #6b7623; /* Dark gray background */
+    color: white; /* White text */
+    text-align: center; /* Centers the footer content */
+    padding: 20px; /* Adds padding inside the footer */
+    position: fixed; /* Fixes the footer at the bottom */
+    bottom: 0; /* Positions the footer at the bottom of the viewport */
+    width: 100%; /* Ensures the footer spans the full width */
+    z-index: 10; /* Ensures the footer stays above other elements */
+    height: 100px; /* Sets a fixed height for the footer */
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer i {
+    font-size: 3rem; /* Adjust the size as needed (e.g., 2rem = 200% of the base font size) */
+    margin: 0 5px; /* Adds spacing between icons */
+    color: #ffffff; /* Ensures the icons remain white */
+}
+
+footer a:hover {
+    color: #f8f9fa; /* Slightly lighter color on hover */
+}
+
+footer img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+footer .mb-3 {
+    margin-bottom: 20px; /* Adds space below the social media icons */
+}
+
+footer p {
+    margin: 0; /* Ensures no extra margin for the copyright text */
+    font-size: 0.9rem; /* Optional: Adjust the font size for better readability */
+}
+
+.card-container {
+    display: flex; /* Enables flexbox layout */
+    flex-wrap: wrap; /* Allows cards to wrap to the next row */
+    gap: 20px; /* Adds space between cards */
+    justify-content: center; /* Centers the cards horizontally */
+}
+
+.card {
+    flex: 1 1 calc(50% - 20px); /* Makes each card take up 50% of the container width minus the gap */
+    max-width: calc(50% - 20px); /* Ensures cards don't exceed 50% of the container width */
+    box-sizing: border-box; /* Ensures padding and border are included in the card's dimensions */
+    padding: 20px; /* Adds padding inside the card */
+    margin: 0; /* Removes default margins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better visibility */
+    border-radius: 10px; /* Adds rounded corners */
+    font-size: 1.2rem; /* Increases the font size inside the card */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Makes the title larger */
+    font-weight: bold; /* Makes the title bold */
+}
+
+.card-subtitle {
+    font-size: 1.2rem; /* Adjusts the subtitle size */
+    color: #6c757d; /* Keeps the muted color for subtitles */
+}
+
+.card-text {
+    font-size: 1.1rem; /* Adjusts the text size */
+}
+
+.recipe-image {
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    max-height: 200px; /* Restricts the height of the image */
+    object-fit: cover; /* Ensures the image is scaled proportionally */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin-bottom: 20px; /* Adds space below the image */
+}

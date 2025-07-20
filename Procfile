@@ -1,1 +1,1 @@
-web: gunicorn config.wsgi
+web: gunicorn menuk9.wsgi

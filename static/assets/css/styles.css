@@ -43,7 +43,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('/static/assets/images/Paws3.jpg'); /* Path to the image */
+    background-image: url('/static/assets/images/Paws2.jpg'); /* Path to the image */
     background-size: cover; /* Ensures the image covers the entire viewport */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the background fixed during scrolling */

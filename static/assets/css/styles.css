@@ -260,3 +260,14 @@ footer p {
     border-radius: 10px; /* Optional: Adds rounded corners */
     margin-bottom: 20px; /* Adds space below the image */
 }
+
+/* For small screens (mobile devices) */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}

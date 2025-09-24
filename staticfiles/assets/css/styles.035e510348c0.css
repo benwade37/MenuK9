@@ -1,6 +1,6 @@
 /* Ensure the hero image fills the entire viewport */
 .hero-image {
-    background-image: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg');
+    background-image: url("/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.0a8917d1da66.jpg");
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */

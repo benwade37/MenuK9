@@ -43,11 +43,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('/static/assets/images/paws3.jpg'); /* Path to the image */
-    background-size: cover; /* Ensures the image covers the entire viewport */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the background fixed during scrolling */
-    background-position: center; /* Centers the image */
+    background-image: url('/static/assets/images/Paws.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     color: #fff; /* Optional: Adjust text color for better visibility */
     padding-bottom: 200px; /* Matches the height of the footer */
 }
@@ -259,6 +258,41 @@ footer p {
     object-fit: cover; /* Ensures the image is scaled proportionally */
     border-radius: 10px; /* Optional: Adds rounded corners */
     margin-bottom: 20px; /* Adds space below the image */
+}
+
+.form-container {
+    max-width: 400px; /* Set the width of the box */
+    margin: 50px auto; /* Center the box horizontally and add vertical spacing */
+    padding: 20px; /* Add padding inside the box */
+    background-color: #dcb0a5; /* Set the background color of the box */
+    border: 1px solid #4419d3; /* Add a border around the box */
+    border-radius: 20px; /* Optional: Round the corners of the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+body .form-container {
+    background-color: #dcb0a5;
+}
+
+.form-container h2 {
+    text-align: center; /* Center the heading text */
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Add space between input fields */
+}
+
+.form-group label {
+    display: block; /* Ensure the label is on its own line */
+    margin-bottom: 5px; /* Add space below the label */
+}
+
+.form-control {
+    width: 100%; /* Make the input fields take up the full width of the container */
+    padding: 10px; /* Add padding inside the input fields */
+    border: 1px solid #ccc; /* Add a border around the input fields */
+    border-radius: 5px; /* Optional: Round the corners of the input fields */
 }
 
 /* For small screens (mobile devices) */

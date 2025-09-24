@@ -43,11 +43,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('/static/assets/images/Paws2.jpg'); /* Path to the image */
-    background-size: cover; /* Ensures the image covers the entire viewport */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the background fixed during scrolling */
-    background-position: center; /* Centers the image */
+    background-image: url("{% static 'images/Paws.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     color: #fff; /* Optional: Adjust text color for better visibility */
     padding-bottom: 200px; /* Matches the height of the footer */
 }
@@ -259,4 +258,15 @@ footer p {
     object-fit: cover; /* Ensures the image is scaled proportionally */
     border-radius: 10px; /* Optional: Adds rounded corners */
     margin-bottom: 20px; /* Adds space below the image */
+}
+
+/* For small screens (mobile devices) */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
 }

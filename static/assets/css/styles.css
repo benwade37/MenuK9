@@ -1,12 +1,11 @@
 /* Ensure the hero image fills the entire viewport */
 .hero-image {
-    background-image: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg');
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    width: 100%; /* Ensures the image spans the full width of the viewport */
-    height: 80vh; /* Adjusts height to account for the navbar (if fixed) */
-    position: relative; /* Allows positioning of the text */
+    position: relative; /* Ensure the text can be positioned over the image */
+    width: 100%; /* Make the image span the full width */
+    height: 80vh; /* Adjust height for mobile screens */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     overflow: hidden; /* Prevents content overflow */
     margin: 0; /* Removes any default margins */
     padding: 20px; /* Adds padding inside the hero image */
@@ -14,6 +13,7 @@
     border: 5px solid #6b7623; /* Adds a border around the hero image */
     box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
     border-radius: 10px; /* Optional: Adds rounded corners to the border */
+    background-image: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg');
 }
 
 /* Ensure the navbar and footer work seamlessly with the hero image */
@@ -27,15 +27,16 @@
 }
 
 .hero-text {
-    position: absolute;
-    top: 50%; /* Centers the text vertically */
-    left: 50%; /* Centers the text horizontally */
-    transform: translate(-50%, -50%); /* Adjusts for the text's dimensions */
-    color: white; /* Makes the text color white for better visibility */
-    text-align: center; /* Centers the text */
-    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for better readability */
-    padding: 20px; /* Adds padding around the text */
-    border-radius: 10px; /* Optional: Rounds the corners of the text background */
+    position: absolute; /* Position the text over the hero image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    text-align: center; /* Center-align the text */
+    color: #fff; /* Ensure the text is visible */
+    font-size: 1.5rem; /* Default font size for larger screens */
+    width: 90%; /* Ensure the text doesn't overflow the container */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    padding: 10px;
 }
 
 body {
@@ -296,12 +297,68 @@ body .form-container {
 }
 
 /* For small screens (mobile devices) */
-@media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
 
-  .container {
-    padding: 10px;
-  }
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 0.3rem; /* Reduce font size for smaller screens */
+        width: 80%; /* Allow more space for the text */
+        padding: 2px; /* Reduce padding */
+    }
+
+    .hero-text h1 {
+        font-size: 0.1rem; /* Adjust heading size */
+    }
+
+    .hero-text p {
+        font-size: 0.1rem; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 0.1rem; /* Further reduce font size for very small screens */
+        width: 100%; /* Use the full width of the container */
+        padding: 1px; /* Keep padding minimal */
+    }
+
+    .hero-text h1 {
+        font-size: 0.1rem; /* Adjust heading size */
+    }
+
+    .hero-text p {
+        font-size: 0.1rem; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-text {
+        font-size: 0.1rem; /* Smaller font size for very narrow screens */
+        width: 100%; /* Use the full width of the container */
+        padding: 2px; /* Reduce padding */
+    }
+
+    .hero-text h1 {
+        font-size: 0.1rem; /* Adjust heading size */
+    }
+
+    .hero-text p {
+        font-size: 0.1rem; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 280px) {
+    .hero-text {
+        font-size: 0.1rem; /* Smaller font size for very narrow screens */
+        width: 100%; /* Use the full width of the container */
+        padding: 2px; /* Reduce padding */
+    }
+
+    .hero-text h1 {
+        font-size: 0.1rem; /* Adjust heading size */
+    }
+
+    .hero-text p {
+        font-size: 0.1rem; /* Adjust paragraph size */
+    }
+    /* Styles for screens 200px wide or smaller */
 }

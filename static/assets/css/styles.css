@@ -316,9 +316,9 @@ body .form-container {
 
 @media (max-width: 480px) {
     .hero-text {
-        font-size: 0.1rem; /* Further reduce font size for very small screens */
+        font-size: 4px; /* Further reduce font size for very small screens */
         width: 100%; /* Use the full width of the container */
-        padding: 1px; /* Keep padding minimal */
+        padding: 0px; /* Keep padding minimal */
     }
 
     .hero-text h1 {
@@ -332,25 +332,25 @@ body .form-container {
 
 @media (max-width: 320px) {
     .hero-text {
-        font-size: 0.1rem; /* Smaller font size for very narrow screens */
+        font-size: 4px; /* Smaller font size for very narrow screens */
         width: 100%; /* Use the full width of the container */
-        padding: 2px; /* Reduce padding */
+        padding: 0%px; /* Reduce padding */
     }
 
     .hero-text h1 {
-        font-size: 0.1rem; /* Adjust heading size */
+        font-size: 4px; /* Adjust heading size */
     }
 
     .hero-text p {
-        font-size: 0.1rem; /* Adjust paragraph size */
+        font-size: 0.; /* Adjust paragraph size */
     }
 }
 
 @media (max-width: 280px) {
     .hero-text {
-        font-size: 0.1rem; /* Smaller font size for very narrow screens */
+        font-size: 4px; /* Smaller font size for very narrow screens */
         width: 100%; /* Use the full width of the container */
-        padding: 2px; /* Reduce padding */
+        padding: 0px; /* Reduce padding */
     }
 
     .hero-text h1 {

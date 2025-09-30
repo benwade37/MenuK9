@@ -1,19 +1,158 @@
-/* Ensure the hero image fills the entire viewport */
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Hero Section */
+/* Base styles for the hero image */
 .hero-image {
-    position: relative; /* Ensure the text can be positioned over the image */
-    width: 100%; /* Make the image span the full width */
-    height: 80vh; /* Adjust height for mobile screens */
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    overflow: hidden; /* Prevents content overflow */
-    margin: 0; /* Removes any default margins */
-    padding: 20px; /* Adds padding inside the hero image */
-    padding-bottom: 30px; /* Adds extra space below the hero image */
-    border: 5px solid #6b7623; /* Adds a border around the hero image */
-    box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
-    border-radius: 10px; /* Optional: Adds rounded corners to the border */
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-image: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg');
+    overflow: hidden;
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 30px;
+    border: 5px solid #6b7623;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* Base styles for the hero text */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 90%;
+    padding: 10px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 60vh;
+        padding: 15px;
+        border: 4px solid #6b7623;
+        border-radius: 8px;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+        width: 95%;
+    }
+
+    body {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .form-container {
+        max-width: 90%; /* Reduce the width for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+    .hero-image {
+        height: 60vh;
+    }
+
+    .hero-text {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    body {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .form-container {
+        max-width: 95%; /* Use almost the full width of the screen */
+        padding: 10px;
+    }
+}
+
+/* Media query for screens smaller than 320px */
+@media (max-width: 320px) {
+    .hero-image {
+        height: 40vh; /* Further reduce the height for very small screens */
+        padding: 5px; /* Minimize padding */
+        border: 2px solid #6b7623; /* Smaller border */
+        border-radius: 3px; /* Adjust border radius */
+    }
+
+    .hero-text {
+        font-size: 0.5rem; /* Smaller font size for very small screens */
+        width: 100%; /* Ensure the text spans the full width */
+        padding: 5px; /* Reduce padding */
+        line-height: 1.4; /* Adjust line height for readability */
+    }
+
+    body {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+
+    .form-container {
+        max-width: 100%; /* Full width for very small screens */
+        padding: 5px;
+    }
+}
+
+/* Media query for iPhone 12/13/14 (max-width: 390px) */
+@media (max-width: 390px) {
+    body {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .hero-image {
+        height: 60vh;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+        width: 95%;
+        padding: 5px;
+    }
+}
+
+/* Media query for iPhone SE (max-width: 320px) */
+@media (max-width: 320px) {
+    body {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .hero-image {
+        height: 50vh;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        width: 100%;
+        padding: 5px;
+    }
 }
 
 /* Ensure the navbar and footer work seamlessly with the hero image */
@@ -24,19 +163,6 @@
     position: fixed; /* Keeps the navbar fixed at the top */
     width: 100%; /* Ensures the navbar spans the full width */
     padding: 20px 0; /* Increases the vertical padding to make the navbar deeper */
-}
-
-.hero-text {
-    position: absolute; /* Position the text over the hero image */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    text-align: center; /* Center-align the text */
-    color: #fff; /* Ensure the text is visible */
-    font-size: 1.5rem; /* Default font size for larger screens */
-    width: 90%; /* Ensure the text doesn't overflow the container */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    padding: 10px;
 }
 
 body {
@@ -50,6 +176,7 @@ body {
     background-position: center;
     color: #fff; /* Optional: Adjust text color for better visibility */
     padding-bottom: 200px; /* Matches the height of the footer */
+    overflow-x: hidden;
 }
 
 .about-page {
@@ -226,17 +353,18 @@ footer p {
     flex-wrap: wrap; /* Allows cards to wrap to the next row */
     gap: 20px; /* Adds space between cards */
     justify-content: center; /* Centers the cards horizontally */
+    padding: 10px;
 }
 
 .card {
-    flex: 1 1 calc(50% - 20px); /* Makes each card take up 50% of the container width minus the gap */
-    max-width: calc(50% - 20px); /* Ensures cards don't exceed 50% of the container width */
-    box-sizing: border-box; /* Ensures padding and border are included in the card's dimensions */
-    padding: 20px; /* Adds padding inside the card */
+    flex: 1 1 calc(50% - 20px); /* Default: Cards take full width on small screens */
+    max-width: calc(50% - 20px); /* Prevents cards from exceeding the container width */
+    box-sizing: border-box; /* Includes padding and border in the width calculation */
+    padding: 15px; /* Adds padding inside the card */
     margin: 0; /* Removes default margins */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
     border-radius: 10px; /* Adds rounded corners */
-    font-size: 1.2rem; /* Increases the font size inside the card */
+    background-color: #fff; /* Sets a white background for the card */
 }
 
 .card-title {
@@ -254,11 +382,10 @@ footer p {
 }
 
 .recipe-image {
-    max-width: 100%; /* Ensures the image doesn't exceed the container width */
-    max-height: 200px; /* Restricts the height of the image */
-    object-fit: cover; /* Ensures the image is scaled proportionally */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-    margin-bottom: 20px; /* Adds space below the image */
+    max-width: 100%; /* Ensures the image doesn't exceed the card width */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Adds rounded corners to the image */
+    margin-bottom: 15px; /* Adds space below the image */
 }
 
 .form-container {
@@ -294,71 +421,4 @@ body .form-container {
     padding: 10px; /* Add padding inside the input fields */
     border: 1px solid #ccc; /* Add a border around the input fields */
     border-radius: 5px; /* Optional: Round the corners of the input fields */
-}
-
-/* For small screens (mobile devices) */
-
-@media (max-width: 768px) {
-    .hero-text {
-        font-size: 0.3rem; /* Reduce font size for smaller screens */
-        width: 80%; /* Allow more space for the text */
-        padding: 2px; /* Reduce padding */
-    }
-
-    .hero-text h1 {
-        font-size: 0.1rem; /* Adjust heading size */
-    }
-
-    .hero-text p {
-        font-size: 0.1rem; /* Adjust paragraph size */
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-text {
-        font-size: 4px; /* Further reduce font size for very small screens */
-        width: 100%; /* Use the full width of the container */
-        padding: 0px; /* Keep padding minimal */
-    }
-
-    .hero-text h1 {
-        font-size: 0.1rem; /* Adjust heading size */
-    }
-
-    .hero-text p {
-        font-size: 0.1rem; /* Adjust paragraph size */
-    }
-}
-
-@media (max-width: 320px) {
-    .hero-text {
-        font-size: 4px; /* Smaller font size for very narrow screens */
-        width: 100%; /* Use the full width of the container */
-        padding: 0%px; /* Reduce padding */
-    }
-
-    .hero-text h1 {
-        font-size: 4px; /* Adjust heading size */
-    }
-
-    .hero-text p {
-        font-size: 0.; /* Adjust paragraph size */
-    }
-}
-
-@media (max-width: 280px) {
-    .hero-text {
-        font-size: 4px; /* Smaller font size for very narrow screens */
-        width: 100%; /* Use the full width of the container */
-        padding: 0px; /* Reduce padding */
-    }
-
-    .hero-text h1 {
-        font-size: 0.1rem; /* Adjust heading size */
-    }
-
-    .hero-text p {
-        font-size: 0.1rem; /* Adjust paragraph size */
-    }
-    /* Styles for screens 200px wide or smaller */
 }

@@ -45,6 +45,39 @@ Entity Relationship Diagram
 
 For simplicity and to cater to the needs of different user types (all dog lovers and owners) as well as keeping the site intuitive, clean and functional, the site uses a generic user model with a one to many relationship: one user can create many recipes.
 
+Deployment
+
+The project is deployed using the following steps:
+
+Heroku The site was deployed to Heroku from the main branch of the repository early in the development stage for continuous deployment and checking.
+The Heroku app is setup with 3 environment variables, replacing the environment variables stored in env.py (which doesn't get pushed to github).
+
+In order to create an Heroku app:
+
+Click on New in the Heroku dashboard, and Create new app from the menu dropdown.
+
+Give your new app a unique name, and choose a region, preferably one that is geographically closest to you.
+
+Click "Create app"
+
+In your app settings, click on "Reveal Config Vars" and add the environment variables for your app. These are:
+
+- DATABASE_URL - your database connection string
+- SECRET_Key - the secret key for your app
+- CLOUDINARY_URL - the cloudinary url for your image store
+The PostgreSQL database is served from ElephantSQL
+
+Once the app setup is complete, click on the Deploy tab and:
+
+1. Connect to the required GitHub account
+2. Select the repository to deploy from
+3. Click the Deploy Branch button to start the deployment.
+4. Once deployment finishes the app can be launched.
+
+
+Version Control: Code is managed using Git and GitHub.
+The GitHub Repository can be found here: https://github.com/benwade37/MenuK9/deployments/menuk9
+
 Use of AI:
 
 Use of AI Artificial Intelligence played a significant role in the development of this project. Here are some ways AI was utilised:

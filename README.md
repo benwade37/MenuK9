@@ -84,6 +84,8 @@ Use of AI Artificial Intelligence played a significant role in the development o
 
 Planning and Design AI tools like Copilot were used to generate ideas and suggestions for the project. These tools provided insights and recommendations for the website's layout, features, and functionality. This helped streamline the planning and design process and ensure a more user-friendly and engaging final product. AI was also used on Lucidchart to create an ERD model.
 
+I also used Balsamiq to create the wireframes easily. Which can be seen above. 
+
 Code Generation
 
 Copilot was used to generate code snippets for various parts of the website. This included HTML structure and CSS styling and some Javascript programming. The AI provided context-aware suggestions that helped streamline the coding process and reduce development time.

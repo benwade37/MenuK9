@@ -1,424 +1,164 @@
 /* General Styles */
-body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-/* Hero Section */
-/* Base styles for the hero image */
+/* Hero Section Base */
 .hero-image {
-    position: relative;
-    width: 100%;
-    height: 80vh;
+    display: flex;                /* Use flexbox */
+    flex-direction: column;       /* Stack elements vertically by default */
+    justify-content: center;      /* Center content vertically */
+    align-items: center;          /* Center horizontally */
+    max-width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg');
-    overflow: hidden;
-    margin: 0;
-    padding: 20px;
-    padding-bottom: 30px;
+    padding: 2%;
     border: 5px solid #6b7623;
+    border-radius: 10%;
     box-sizing: border-box;
-    border-radius: 10px;
+    text-align: center;
 }
 
-/* Base styles for the hero text */
+/* Hero text (desktop overlay style) */
 .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
     color: #fff;
     font-size: 1.5rem;
-    width: 90%;
     padding: 10px;
+    max-width: 90%;
 }
 
-/* Media query for screens smaller than 768px */
+/* ----------- Responsive Adjustments ----------- */
+
+/* Tablet and down */
 @media (max-width: 768px) {
     .hero-image {
-        height: 60vh;
-        padding: 15px;
-        border: 4px solid #6b7623;
-        border-radius: 8px;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        height: auto;           /* Let content decide height */
     }
 
     .hero-text {
         font-size: 1.2rem;
-        width: 95%;
-    }
-
-    body {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-
-    .form-container {
-        max-width: 90%; /* Reduce the width for smaller screens */
-        padding: 15px; /* Adjust padding */
+        padding: 8px;
+        color: #333;            /* Switch to dark text for readability */
+        background: none;       /* No background overlay */
     }
 }
 
-/* Media query for screens smaller than 480px */
-@media (max-width: 480px) {
+/* Small screens (phones) */
+@media (max-width: 475px) {
     .hero-image {
-        height: 60vh;
-    }
-
-    .hero-text {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
-        color: #333;
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    body {
-        font-size: 0.8rem;
-        padding: 5px;
-    }
-
-    .form-container {
-        max-width: 95%; /* Use almost the full width of the screen */
-        padding: 10px;
-    }
-}
-
-/* Media query for screens smaller than 320px */
-@media (max-width: 320px) {
-    .hero-image {
-        height: 40vh; /* Further reduce the height for very small screens */
-        padding: 5px; /* Minimize padding */
-        border: 2px solid #6b7623; /* Smaller border */
-        border-radius: 3px; /* Adjust border radius */
-    }
-
-    .hero-text {
-        font-size: 0.5rem; /* Smaller font size for very small screens */
-        width: 100%; /* Ensure the text spans the full width */
-        padding: 5px; /* Reduce padding */
-        line-height: 1.4; /* Adjust line height for readability */
-    }
-
-    body {
-        font-size: 0.75rem;
-        padding: 5px;
-    }
-
-    .form-container {
-        max-width: 100%; /* Full width for very small screens */
-        padding: 5px;
-    }
-}
-
-/* Media query for iPhone 12/13/14 (max-width: 390px) */
-@media (max-width: 390px) {
-    body {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-
-    .hero-image {
-        height: 60vh;
-    }
-
-    .hero-text {
-        font-size: 1.2rem;
-        width: 95%;
-        padding: 5px;
-    }
-}
-
-/* Media query for iPhone SE (max-width: 320px) */
-@media (max-width: 320px) {
-    body {
-        font-size: 0.8rem;
-        padding: 5px;
-    }
-
-    .hero-image {
-        height: 50vh;
+        flex-direction: column; /* Ensure stacked layout */
+        border: none !important;
+        border-radius: 0 !important;
+        height: auto;
     }
 
     .hero-text {
         font-size: 1rem;
+        padding: 6px;
         width: 100%;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 375px) {
+    .hero-image {
+        height: auto;
+        padding: 0;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
         padding: 5px;
     }
 }
 
-/* Ensure the navbar and footer work seamlessly with the hero image */
-.navbar {
-    background-color: #65362d; /* Replace with your desired color */
-    color: white; /* Ensures the text remains visible */
-    z-index: 10; /* Ensures the navbar stays above the hero image */
-    position: fixed; /* Keeps the navbar fixed at the top */
-    width: 100%; /* Ensures the navbar spans the full width */
-    padding: 20px 0; /* Increases the vertical padding to make the navbar deeper */
-}
-
-body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-image: url('/assets/images/Paws.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #fff; /* Optional: Adjust text color for better visibility */
-    padding-bottom: 200px; /* Matches the height of the footer */
-    overflow-x: hidden;
-}
-
-.about-page {
-    max-width: 800px; /* Limits the width of the content */
-    margin: 0 auto; /* Centers the content */
-    padding: 20px; /* Adds padding around the content */
-    font-family: 'Lato', sans-serif; /* Ensures consistent font styling */
-}
-
-.about-intro
-{
-    text-align: center; /* Centers the introductory text */
-    margin-bottom: 40px; /* Adds space below the intro section */
-    background-color: #dcb0a5;
-}
-
-.about-page section {
-    margin-bottom: 40px; /* Adds space between sections */
-    padding: 20px; /* Adds padding inside each section */
-    border: 1px solid #ddd; /* Adds a subtle border around sections */
-    border-radius: 10px; /* Rounds the corners of the sections */
-    background-color: #dcb0a5; /* Adds a light background color */
-}
-
-.about-page h1, .about-page h2 {
-    color: #65362d; /* Sets a custom color for headings */
-    font-weight: 700; /* Makes headings bold */
-    margin-bottom: 20px; /* Adds space below headings */
-}
-
-.about-page p {
-    font-size: 1.1rem; /* Makes the text slightly larger */
-    line-height: 1.6; /* Improves readability */
-    color: #333; /* Sets a dark color for text */
-}
-
-.about-page a {
-    color: #65362d; /* Sets a custom color for links */
-    text-decoration: none; /* Removes underline from links */
-}
-
-.about-page a:hover {
-    text-decoration: underline; /* Adds underline on hover */
-}
-
-.dropdown-toggle {
-    background-color: #65362d; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Removes default border */
-    padding: 10px 20px; /* Adds padding to the button */
-    font-size: 1rem; /* Adjusts the font size */
-    cursor: pointer; /* Changes the cursor to a pointer */
-    border-radius: 5px; /* Adds rounded corners */
-}
-
-.dropdown-toggle:hover {
-    background-color: #4a2a1f; /* Darker color on hover */
-}
-
-.dropdown-content {
-    display: none; /* Hides the list by default */
-    margin-top: 10px; /* Adds space between the button and the list */
-    padding: 10px; /* Adds padding inside the list */
-    border: 1px solid #ddd; /* Adds a subtle border around the list */
-    border-radius: 5px; /* Adds rounded corners */
-    background-color: #f9f9f9; /* Adds a light background color */
-}
-
-.dropdown-content li {
-    margin-bottom: 5px; /* Adds space between list items */
-    font-size: 1rem; /* Adjusts the font size */
-}
-
-.about-comp {
-    background-color: #ffd700; /* Adds a bright gold background to make it stand out */
-    color: #65362d; /* Sets a complementary text color */
-    padding: 30px; /* Adds padding inside the section */
-    border: 3px solid #65362d; /* Adds a bold border */
-    border-radius: 15px; /* Rounds the corners of the section */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
-    text-align: center; /* Centers the text */
-    margin: 40px auto; /* Adds space around the section and centers it */
-    max-width: 800px; /* Limits the width of the section */
-}
-
-.about-comp h2 {
-    font-size: 2rem; /* Makes the heading larger */
-    font-weight: 700; /* Makes the heading bold */
-    margin-bottom: 20px; /* Adds space below the heading */
-}
-
-.about-comp p {
-    font-size: 1.2rem; /* Makes the text slightly larger */
-    line-height: 1.6; /* Improves readability */
-    margin-bottom: 15px; /* Adds space below each paragraph */
-}
-
-.about-comp strong {
-    font-size: 1.3rem; /* Makes the "Good luck!" text larger */
-    font-weight: bold; /* Emphasizes the text */
-}
-
-.about-comp em {
-    font-size: 1.1rem; /* Styles the "Whoseagooddoggie Team" text */
-    font-style: italic; /* Adds emphasis with italics */
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700; /* Bold for headings */
-}
-
-p, a, button {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400; /* Regular weight for text */
-}
-
-/* Increase font size for the navigation bar links */
-.navbar .nav-link {
-    font-size: 1.5rem; /* Adjust the size as needed (e.g., 1.2rem = 120% of the base font size) */
-    font-weight: 500; /* Optional: Adjust the weight for better readability */
-}
-
-/* Optional: Increase the font size for the brand/logo */
-.navbar-brand {
-    font-size: 2rem; /* Adjust the size as needed */
-    font-weight: 700; /* Make it bold */
-}
-
-/* Ensure the footer stays fixed at the bottom of the page */
-footer {
-    background-color: #6b7623; /* Dark gray background */
-    color: white; /* White text */
-    text-align: center; /* Centers the footer content */
-    padding: 20px; /* Adds padding inside the footer */
-    position: fixed; /* Fixes the footer at the bottom */
-    bottom: 0; /* Positions the footer at the bottom of the viewport */
-    width: 100%; /* Ensures the footer spans the full width */
-    z-index: 10; /* Ensures the footer stays above other elements */
-    height: 100px; /* Sets a fixed height for the footer */
-}
-
-footer a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-footer i {
-    font-size: 3rem; /* Adjust the size as needed (e.g., 2rem = 200% of the base font size) */
-    margin: 0 5px; /* Adds spacing between icons */
-    color: #ffffff; /* Ensures the icons remain white */
-}
-
-footer a:hover {
-    color: #f8f9fa; /* Slightly lighter color on hover */
-}
-
-footer img {
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-footer .mb-3 {
-    margin-bottom: 20px; /* Adds space below the social media icons */
-}
-
-footer p {
-    margin: 0; /* Ensures no extra margin for the copyright text */
-    font-size: 0.9rem; /* Optional: Adjust the font size for better readability */
-}
+/* -------- Recipe Cards -------- */
 
 .card-container {
-    display: flex; /* Enables flexbox layout */
-    flex-wrap: wrap; /* Allows cards to wrap to the next row */
-    gap: 20px; /* Adds space between cards */
-    justify-content: center; /* Centers the cards horizontally */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     padding: 10px;
 }
 
-.card {
-    flex: 1 1 calc(50% - 20px); /* Default: Cards take full width on small screens */
-    max-width: calc(50% - 20px); /* Prevents cards from exceeding the container width */
-    box-sizing: border-box; /* Includes padding and border in the width calculation */
-    padding: 15px; /* Adds padding inside the card */
-    margin: 0; /* Removes default margins */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    border-radius: 10px; /* Adds rounded corners */
-    background-color: #fff; /* Sets a white background for the card */
+/* Force 1 column on mobile and center cards */
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        justify-items: center; /* Center cards horizontally */
+    }
+
+    .card {
+        max-width: 400px;      /* Limit card width */
+        width: 100%;           /* Full width up to max-width */
+    }
 }
 
+/* Card styling */
+.card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Card images */
+.card img {
+    width: 100%;
+    height: 200px;       /* Uniform height */
+    object-fit: cover;   /* Crop without stretching */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Text */
 .card-title {
-    font-size: 1.5rem; /* Makes the title larger */
-    font-weight: bold; /* Makes the title bold */
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .card-subtitle {
-    font-size: 1.2rem; /* Adjusts the subtitle size */
-    color: #6c757d; /* Keeps the muted color for subtitles */
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 8px;
 }
 
 .card-text {
-    font-size: 1.1rem; /* Adjusts the text size */
+    font-size: 1rem;
+    line-height: 1.4;
+    flex-grow: 1;
 }
 
-.recipe-image {
-    max-width: 100%; /* Ensures the image doesn't exceed the card width */
-    height: auto; /* Maintains the aspect ratio */
-    border-radius: 10px; /* Adds rounded corners to the image */
-    margin-bottom: 15px; /* Adds space below the image */
+/* Very small screens tweaks */
+@media (max-width: 400px) {
+    .card {
+        padding: 10px;
+    }
+
+    .card img {
+        height: 150px; /* Smaller image for tiny screens */
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-subtitle,
+    .card-text {
+        font-size: 0.9rem;
+    }
 }
 
-.form-container {
-    max-width: 400px; /* Set the width of the box */
-    margin: 50px auto; /* Center the box horizontally and add vertical spacing */
-    padding: 20px; /* Add padding inside the box */
-    background-color: #dcb0a5; /* Set the background color of the box */
-    border: 1px solid #4419d3; /* Add a border around the box */
-    border-radius: 20px; /* Optional: Round the corners of the box */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-}
-
-body .form-container {
-    background-color: #dcb0a5;
-}
-
-.form-container h2 {
-    text-align: center; /* Center the heading text */
-    margin-bottom: 20px; /* Add space below the heading */
-}
-
-.form-group {
-    margin-bottom: 15px; /* Add space between input fields */
-}
-
-.form-group label {
-    display: block; /* Ensure the label is on its own line */
-    margin-bottom: 5px; /* Add space below the label */
-}
-
-.form-control {
-    width: 100%; /* Make the input fields take up the full width of the container */
-    padding: 10px; /* Add padding inside the input fields */
-    border: 1px solid #ccc; /* Add a border around the input fields */
-    border-radius: 5px; /* Optional: Round the corners of the input fields */
-}

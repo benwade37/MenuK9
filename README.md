@@ -58,17 +58,49 @@ These steps ensured a robust and user-friendly final product.
 
 Code Validation
 All HTML and CSS code was validated using the W3C Markup Validation Service and W3C CSS Validation Service, respectively. The results are as follows:
+
 HTML Validation:
+
 All HTML code was validated using the W3C Markup Validation Service to ensure it meets web standards and best practices. The validation process helped identify four errors which were easily corrected, resulting in a clean and compliant HTML structure.
 
+CSS Validation:
+No errors were found. Although some browser-specific warnings were given.
 
+Manual Testing
+
+Manual testing was conducted to ensure the functionality and usability of the platform. The following tests were performed:
+
+Navigation Links:
+
+Verified that all navigation links in the navbar and footer direct to the correct pages.
+Checked that the navbar updates dynamically based on the user's authentication status (logged in vs logged out).
+Authentication:
+
+Tested user registration, login, and logout functionality.
+Ensured error messages display correctly for invalid inputs (e.g., incorrect password).
+Recipe Management:
+
+Verified that users can create, edit, and delete recipes.
+Checked that only the recipe owner can edit or delete their recipes.
+
+Responsiveness:
+
+Tested the website on various devices (desktop, tablet, mobile) to ensure responsive design. There is still an issue with the Mobile Recipe page that I hope to resolve.
+
+Error Handling: 
+
+Checked that 404 and 500 error pages display correctly when accessing invalid URLs.
+Forms:
+
+Ensured all forms (e.g., recipe submission, login, registration) validate inputs and display appropriate error messages for invalid data.
 
 Deployment
 
 The project is deployed using the following steps:
 
-Heroku The site was deployed to Heroku from the main branch of the repository early in the development stage for continuous deployment and checking.
-The Heroku app is setup with 3 environment variables, replacing the environment variables stored in env.py (which doesn't get pushed to github).
+Heroku 
+
+The site was deployed to Heroku from the main branch of the repository early in the development stage for continuous deployment and checking.The Heroku app is setup with 3 environment variables, replacing the environment variables stored in env.py (which doesn't get pushed to github).
 
 In order to create an Heroku app:
 
@@ -103,6 +135,8 @@ Use of AI Artificial Intelligence played a significant role in the development o
 Planning and Design AI tools like Copilot were used to generate ideas and suggestions for the project. These tools provided insights and recommendations for the website's layout, features, and functionality. This helped streamline the planning and design process and ensure a more user-friendly and engaging final product. AI was also used on Lucidchart to create an ERD model.
 
 I also used Balsamiq to create the wireframes easily. Which can be seen above. 
+
+ChatGPT was used for layout queries - particulary the mobile format, where I was very confused. It helped resolve some issues, but not the menu page on small screens, this will hopefully be dealt with.
 
 Code Generation
 

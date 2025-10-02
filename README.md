@@ -45,6 +45,24 @@ Entity Relationship Diagram
 
 For simplicity and to cater to the needs of different user types (all dog lovers and owners) as well as keeping the site intuitive, clean and functional, the site uses a generic user model with a one to many relationship: one user can create many recipes.
 
+Testing: 
+
+The website underwent comprehensive testing to ensure its functionality and accessibility:
+• Manual Code Review: Conducted to identify and fix bugs, and to ensure accessibility requirements such as alt text on images are met.
+• W3C Validation: The site was checked using the W3C HTML and CSS validators to ensure compliance with web standards.
+• Link Testing: Verified that all links work correctly and that external links open in a new tab.
+• Local Testing: Manually tested the site locally for rendering issues, image loading, navigation links, responsiveness at different breakpoints, and checked the console for errors using developer tools.
+• Hosted Site Testing: Manually tested the deployed site to ensure it functions as expected.
+• Lighthouse Testing: Used Dev Tools Lighthouse to assess performance, accessibility, best practices, and SEO.
+These steps ensured a robust and user-friendly final product.
+
+Code Validation
+All HTML and CSS code was validated using the W3C Markup Validation Service and W3C CSS Validation Service, respectively. The results are as follows:
+HTML Validation:
+All HTML code was validated using the W3C Markup Validation Service to ensure it meets web standards and best practices. The validation process helped identify four errors which were easily corrected, resulting in a clean and compliant HTML structure.
+
+
+
 Deployment
 
 The project is deployed using the following steps:

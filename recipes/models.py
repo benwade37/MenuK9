@@ -7,11 +7,16 @@ from django.urls import reverse
 class Recipe(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    steps = models.TextField()  # New field for recipe steps  # New field for recipe steps
+    steps = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    image = CloudinaryField('image', blank=True, null=True)  # Field for image upload
+    image = CloudinaryField('image', blank=True, null=True)
+    status = models.CharField(
+        max_length=20,
+        default='draft',  # Default value
+        choices=[('draft', 'Draft'), ('published', 'Published')]  # Optional choices
+    )
 
     def get_absolute_url(self):
         return reverse("recipes-detail", kwargs={"pk": self.pk})

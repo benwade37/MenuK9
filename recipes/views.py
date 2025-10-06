@@ -35,11 +35,12 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        form.instance.status = 'draft'  # Set default status programmatically
         return super().form_valid(form)
 
 class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Recipe
-    fields = ['title', 'description', 'steps', 'image']  # Include all fields for updating
+    fields = ['title', 'description', 'steps', 'image',]  # Include all fields for updating
 
     def test_func(self):
         recipe = self.get_object()
@@ -49,4 +50,5 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-  
+from recipes.models import Recipe
+Recipe.objects.filter(status__isnull=True).update(status='draft')

@@ -30,3 +30,13 @@ class RecipeForm(forms.ModelForm):
             result = cloudinary.uploader.upload(image)
             print(result)  # Should return the uploaded file's details
         return image
+class RatingForm(forms.Form):
+    rating = forms.IntegerField(
+        label="Rate this recipe (1-5)",
+        min_value=1,
+        max_value=5,
+        widget=forms.NumberInput(attrs={
+         'class': 'form-control narrow-input',
+            'placeholder': 'Enter a rating (1-5)',
+        })
+    )

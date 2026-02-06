@@ -5,21 +5,42 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
 class Recipe(models.Model):
-    title = models.CharField(max_length=100)
+    STATUS_CHOICES = (
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    )
+
+    title = models.CharField(max_length=255)
     description = models.TextField()
     steps = models.TextField()
+    image = CloudinaryField('image', blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    image = CloudinaryField('image', blank=True, null=True)
-    status = models.CharField(
-        max_length=20,
-        default='draft',  # Default value
-        choices=[('draft', 'Draft'), ('published', 'Published')]  # Optional choices
-    )
+
+    def average_rating(self):
+        ratings = self.ratings.all()
+        if ratings.exists():
+            return sum(r.rating for r in ratings) / ratings.count()
+        return 0
+
+    def __str__(self):
+        return self.title
 
     def get_absolute_url(self):
         return reverse("recipes-detail", kwargs={"pk": self.pk})
 
+
+class Rating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='ratings')
+    rating = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'recipe')
+
     def __str__(self):
-        return self.title
+        return f"{self.user} rated {self.recipe} - {self.rating}/5"
+

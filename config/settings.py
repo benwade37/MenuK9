@@ -31,8 +31,7 @@ import os
 SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-key")  # Use the SECRET_KEY from env.py
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 ALLOWED_HOSTS = ['menuk9-d1fa42538dda.herokuapp.com','localhost', '127.0.0.1']
 
 # Application definition
@@ -81,8 +80,8 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # Add the global templates directory
+        'APP_DIRS': True,  # Enable app-specific template loading
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

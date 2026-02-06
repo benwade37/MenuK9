@@ -1,0 +1,22 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+<h1>Rate Recipe: {{ recipe.title }}</h1>
+<p>{{ recipe.description }}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit Rating</button>
+</form>
+{% endblock content %}
+
+{% if not has_rated %}
+  <form method="POST" action="{% url 'submit-rating' object.pk %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary mt-2">Submit Rating</button>
+  </form>
+{% else %}
+  <p>You have already submitted a rating for this recipe.</p>
+{% endif %}

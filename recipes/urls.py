@@ -11,4 +11,6 @@ urlpatterns = [
     path('recipe/create', views.RecipeCreateView.as_view(), name="recipes-create"),
     path('recipe/<int:pk>/update', views.RecipeUpdateView.as_view(), name="recipes-update"),
     path('recipe/<int:pk>/delete', views.RecipeDeleteView.as_view(), name="recipes-delete"),
+    path('recipe/<int:pk>/submit', views.SubmitRatingView.as_view(), name="recipes-submit-rating"),
+    path('recipe/<int:pk>/rate/', views.SubmitRatingView.as_view(), name="submit-rating"),
 ]

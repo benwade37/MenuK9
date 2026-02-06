@@ -1,25 +1,52 @@
 <!-- # template/recipes/recipe_detail.html -->
 {% extends "recipes/base.html" %}
 {% block content %}
+
 <h1>{{ object.title }}</h1>
-<div class="card my-4">
+
+<div class="card mb-4">
   <div class="card-body">
+
     {% if object.image %}
-    <img src="{{ object.image.url }}" alt="{{ object.title }}" class="recipe-image">
+      <img src="{{ object.image.url }}" alt="{{ object.title }}" class="recipe-image">
     {% endif %}
+
     <h5 class="card-title">{{ object.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">By {{ object.author }}</h6>
+
     <p class="card-text"><strong>Description:</strong> {{ object.description }}</p>
     <p class="card-text"><strong>Steps:</strong> {{ object.steps }}</p>
+
     <h6 class="card-subtitle mb-2 text-muted">
       Last updated: {{ object.updated_at|date:"F d, Y" }}
     </h6>
+
+    <p>Average Rating: {{ object.average_rating|floatformat:1 }}</p>
+
   </div>
 </div>
-{% if object.author == user or user.is_staff %}
-<div class="col-4">
-    <a class="btn btn-outline-info" href="{% url 'recipes-update' object.id %}">PUPdate/Edit</a>
-    <a class="btn btn-outline-danger" href="{% url 'recipes-delete' object.id %}">Delete</a>
+
+<div class="d-flex align-items-center gap-2">
+  <a href="{% url 'recipes-all_recipes' %}" class="btn btn-success">
+    Back to All Recipes
+  </a>
 </div>
+
+{% if not has_rated %}
+  <form method="POST" action="{% url 'submit-rating' object.pk %}" class="mt-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary mt-2">Submit Rating</button>
+  </form>
+{% else %}
+  <p class="mt-3 text-muted">You have already submitted a rating for this recipe.</p>
 {% endif %}
+
+{% if object.author == user or user.is_staff %}
+  <div class="mt-3">
+      <a class="btn btn-outline-info" href="{% url 'recipes-update' object.id %}">Update/Edit</a>
+      <a class="btn btn-outline-danger" href="{% url 'recipes-delete' object.id %}">Delete</a>
+  </div>
+{% endif %}
+
 {% endblock content %}

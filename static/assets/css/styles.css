@@ -258,11 +258,16 @@
    }
    
    .form-control {
-     width: 100%;
+     width: 40%;
      padding: 10px;
    
      border: 1px solid #ccc;
      border-radius: 5px;
+   }
+
+   .narrow-input {
+     width: 40px; /* Set a fixed width */
+     max-width: 40%; /* Ensure it doesn't exceed the container */
    }
    
    /* =========================
@@ -320,4 +325,3 @@
        height: 150px;
      }
    }
-   

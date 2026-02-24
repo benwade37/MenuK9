@@ -1,164 +1,326 @@
-/* General Styles */
-/* Hero Section Base */
-.hero-image {
-    display: flex;                /* Use flexbox */
-    flex-direction: column;       /* Stack elements vertically by default */
-    justify-content: center;      /* Center content vertically */
-    align-items: center;          /* Center horizontally */
-    max-width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.0a8917d1da66.jpg");
-    padding: 2%;
-    border: 5px solid #6b7623;
-    border-radius: 10%;
-    box-sizing: border-box;
-    text-align: center;
-}
 
-/* Hero text (desktop overlay style) */
-.hero-text {
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 10px;
-    max-width: 90%;
-}
-
-/* ----------- Responsive Adjustments ----------- */
-
-/* Tablet and down */
-@media (max-width: 768px) {
-    .hero-image {
-        border: none;
-        border-radius: 0;
-        padding: 0;
-        height: auto;           /* Let content decide height */
-    }
-
-    .hero-text {
-        font-size: 1.2rem;
-        padding: 8px;
-        color: #333;            /* Switch to dark text for readability */
-        background: none;       /* No background overlay */
-    }
-}
-
-/* Small screens (phones) */
-@media (max-width: 475px) {
-    .hero-image {
-        flex-direction: column; /* Ensure stacked layout */
-        border: none !important;
-        border-radius: 0 !important;
-        height: auto;
-    }
-
-    .hero-text {
-        font-size: 1rem;
-        padding: 6px;
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+   }
+   
+   body {
+     margin: 0;
+     font-family: 'Lato', sans-serif;
+     color: #333;
+     padding-bottom: 120px; /* space for fixed footer */
+   }
+   
+   h1, h2, h3, h4, h5, h6 {
+     font-weight: 700;
+     margin-top: 0;
+   }
+   
+   p {
+     line-height: 1.6;
+   }
+   
+   a {
+     color: inherit;
+     text-decoration: none;
+   }
+   
+   /* =========================
+      NAVBAR
+      ========================= */
+   
+   .navbar {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 10;
+   
+     background-color: #65362d;
+     color: #fff;
+     padding: 20px 0;
+   }
+   
+   .navbar-brand {
+     font-size: 2rem;
+     font-weight: 700;
+   }
+   
+   .navbar .nav-link {
+     font-size: 1.5rem;
+     font-weight: 500;
+   }
+   
+   /* =========================
+      HERO SECTION (FLEX ONLY)
+      ========================= */
+   
+      .hero-image {
+        position: relative;
         width: 100%;
-    }
-}
+        min-height: 80vh; /* Full screen height */
+        background: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg') center / cover no-repeat;
+      
+        border: 5px solid #6b7623;
+        border-radius: 12px;
+        box-sizing: border-box;  /* IMPORTANT: stops border causing overflow */
+        overflow: hidden;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      
+      .hero-text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+        max-width: 800px;
+        padding: 1.5rem;
+      
+        text-align: center;
+        color: #fff;
+        font-size: 1.5rem;
+      
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        z-index: 5;
+      }
+      
+   
+   /* =========================
+      CARD LAYOUT (FLEX GRID)
+      ========================= */
+   
+   .card-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+   
+     padding: 40px 20px;
+   }
+   
+   .card {
+     display: flex;
+     flex-direction: column;
+   
+     flex: 1 1 280px;
+     max-width: 400px;
+   
+     padding: 16px;
+     background-color: #fff;
+   
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+   
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+   }
+   
+   .card img {
+     width: 100%;
+     height: 200px;
+     object-fit: cover;
+   
+     border-radius: 8px;
+     margin-bottom: 15px;
+   }
+   
+   .card-title {
+     font-size: 1.5rem;
+     font-weight: bold;
+   }
+   
+   .card-subtitle {
+     font-size: 1rem;
+     color: #6c757d;
+     margin-bottom: 8px;
+   }
+   
+   .card-text {
+     font-size: 1rem;
+     flex-grow: 1;
+   }
+   
+   /* =========================
+      ABOUT PAGE
+      ========================= */
+   
+   .about-page {
+     max-width: 800px;
+     margin: 40px auto;
+     padding: 20px;
+   }
+   
+   .about-page section {
+     margin-bottom: 40px;
+     padding: 20px;
+   
+     background-color: #dcb0a5;
+     border-radius: 10px;
+   }
+   
+   .about-page h1,
+   .about-page h2 {
+     color: #65362d;
+   }
+   
+   .about-page p {
+     font-size: 1.1rem;
+     color: #333;
+   }
+   
+   /* =========================
+      HIGHLIGHT / COMPETITION
+      ========================= */
+   
+   .about-comp {
+     max-width: 800px;
+     margin: 40px auto;
+     padding: 30px;
+   
+     background-color: #ffd700;
+     color: #65362d;
+     text-align: center;
+   
+     border: 3px solid #65362d;
+     border-radius: 15px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+   }
+   
+   .about-comp h2 {
+     font-size: 2rem;
+     margin-bottom: 20px;
+   }
+   
+   .about-comp p {
+     font-size: 1.2rem;
+   }
+   
+   /* =========================
+      DROPDOWN
+      ========================= */
+   
+   .dropdown-toggle {
+     background-color: #65362d;
+     color: #fff;
+     border: none;
+   
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   
+   .dropdown-toggle:hover {
+     background-color: #4a2a1f;
+   }
+   
+   .dropdown-content {
+     display: none;
+     margin-top: 10px;
+     padding: 10px;
+   
+     background-color: #f9f9f9;
+     border-radius: 5px;
+   }
+   
+   /* =========================
+      FORMS
+      ========================= */
+   
+   .form-container {
+     max-width: 400px;
+     margin: 50px auto;
+     padding: 20px;
+   
+     background-color: #dcb0a5;
+     border-radius: 20px;
+     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+   }
+   
+   .form-group {
+     margin-bottom: 15px;
+   }
+   
+   .form-group label {
+     display: block;
+     margin-bottom: 5px;
+   }
+   
+   .form-control {
+     width: 40%;
+     padding: 10px;
+   
+     border: 1px solid #ccc;
+     border-radius: 5px;
+   }
 
-/* Very small screens */
-@media (max-width: 375px) {
-    .hero-image {
-        height: auto;
-        padding: 0;
-    }
-
-    .hero-text {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        padding: 5px;
-    }
-}
-
-/* -------- Recipe Cards -------- */
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 10px;
-}
-
-/* Force 1 column on mobile and center cards */
-@media (max-width: 600px) {
-    .card-container {
-        grid-template-columns: 1fr;
-        justify-items: center; /* Center cards horizontally */
-    }
-
-    .card {
-        max-width: 400px;      /* Limit card width */
-        width: 100%;           /* Full width up to max-width */
-    }
-}
-
-/* Card styling */
-.card {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 15px;
-    margin: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    background-color: #fff;
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
-}
-
-/* Hover effect */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-/* Card images */
-.card img {
-    width: 100%;
-    height: 200px;       /* Uniform height */
-    object-fit: cover;   /* Crop without stretching */
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Text */
-.card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.card-subtitle {
-    font-size: 1rem;
-    color: #6c757d;
-    margin-bottom: 8px;
-}
-
-.card-text {
-    font-size: 1rem;
-    line-height: 1.4;
-    flex-grow: 1;
-}
-
-/* Very small screens tweaks */
-@media (max-width: 400px) {
-    .card {
-        padding: 10px;
-    }
-
-    .card img {
-        height: 150px; /* Smaller image for tiny screens */
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .card-subtitle,
-    .card-text {
-        font-size: 0.9rem;
-    }
-}
-
+   .narrow-input {
+     width: 40px; /* Set a fixed width */
+     max-width: 40%; /* Ensure it doesn't exceed the container */
+   }
+   
+   /* =========================
+      FOOTER
+      ========================= */
+   
+   footer {
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     height: 100px;
+   
+     background-color: #6b7623;
+     color: #fff;
+     text-align: center;
+   
+     padding: 20px;
+     z-index: 10;
+   }
+   
+   footer i {
+     font-size: 3rem;
+     margin: 0 5px;
+   }
+   
+   /* =========================
+      RESPONSIVE TWEAKS ONLY
+      ========================= */
+   
+   @media (max-width: 768px) {
+     .navbar-brand {
+       font-size: 1.4rem;
+     }
+   
+     .navbar .nav-link {
+       font-size: 1.2rem;
+     }
+   
+     .hero-text {
+       font-size: 1.2rem;
+     }
+   }
+   
+   @media (max-width: 480px) {
+     .hero-image {
+       border: none;
+       border-radius: 0;
+       max-height: 25vh;
+     }
+   
+     .hero-text {
+       font-size: 1rem;
+     }
+   
+     .card img {
+       height: 150px;
+     }
+   }

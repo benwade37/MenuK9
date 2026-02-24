@@ -59,20 +59,21 @@
       ========================= */
    
       .hero-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      
-        min-height: 100svh;
-        padding-top: 120px;
-      
-        background: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg')
-                    center / cover no-repeat;
+        position: relative;
+        width: 100%;
+        min-height: 100vh; /* Full screen height */
+        background: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg') center / cover no-repeat;
       
         border: 5px solid #6b7623;
         border-radius: 12px;
+        box-sizing: border-box;  /* IMPORTANT: stops border causing overflow */
         overflow: hidden;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+      
       
       .hero-text {
         position: fixed;
@@ -315,6 +316,7 @@
      .hero-image {
        border: none;
        border-radius: 0;
+       max-height: 50vh;
      }
    
      .hero-text {

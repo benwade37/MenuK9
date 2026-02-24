@@ -31,7 +31,7 @@ import os
 SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-key")  # Use the SECRET_KEY from env.py
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['menuk9-d1fa42538dda.herokuapp.com','localhost', '127.0.0.1']
 
 # Application definition

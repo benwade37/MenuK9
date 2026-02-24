@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A platform to share and discover homemade dog recipes.">
     {% if title %}
-    <title>Whoseagooddoggie - {{title}}</title>
+    <title>Whosagooddoggie - {{title}}</title>
     {% else %}
-    <title>Whoseagooddoggie Recipes</title>
+    <title>Whosagooddoggie Recipes</title>
     {% endif %}
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
@@ -24,7 +24,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'recipes-home' %}">#Whoseagooddoggie</a>
+        <a class="navbar-brand" href="{% url 'recipes-home' %}">#Whosagooddoggie</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -40,17 +40,13 @@
           <ul class="navbar-nav">
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="{% url 'recipes-all_recipes' %}"
-                >All Recipes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'recipes-about' %}">About</a>
+              <a class="nav-link" aria-current="page" href="{% url 'recipes-all_recipes' %}">All Recipes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'recipes-create' %}">Add Recipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'recipes-about' %}">Why Homemade?</a>
             </li>
             {% endif %}
           </ul>
@@ -79,20 +75,17 @@
         <!-- Social Media Links -->
         <div class="mb-3">
           <a href="https://www.facebook.com" target="_blank" class="text-white mx-2">
-            <i class="fab fa-facebook fa-lg"></i>
-          </a>
+            <i class="fab fa-facebook fa-lg"></i></a>
           <a href="https://www.instagram.com" target="_blank" class="text-white mx-2">
-            <i class="fab fa-instagram fa-lg"></i>
-          </a>
+            <i class="fab fa-instagram fa-lg"></i></a>
           <a href="https://www.youtube.com" target="_blank" class="text-white mx-2">
-            <i class="fab fa-youtube fa-lg"></i>
-          </a>
+            <i class="fab fa-youtube fa-lg"></i></a>
           <a href="https://www.tiktok.com" target="_blank" class="text-white mx-2">
             <i class="fab fa-tiktok fa-lg"></i>
           </a>
         <!-- Copyright -->
         <div>
-          <p class="mb-0">&copy; 2025 #Whoseagooddoggie. All rights reserved.</p>
+          <p class="mb-0">&copy; 2025 #Whosagooddoggie. All rights reserved.</p>
         </div>
     </footer>
     <script

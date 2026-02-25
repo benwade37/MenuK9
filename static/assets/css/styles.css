@@ -57,24 +57,23 @@
    /* =========================
       HERO SECTION (FLEX ONLY)
       ========================= */
-   
-      .hero-image {
-        position: relative;
-        width: 100%;
-        min-height: 100vh; /* Full screen height */
-        background: url('/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg') center / cover no-repeat;
-      
-        border: 5px solid #6b7623;
-        border-radius: 12px;
-        box-sizing: border-box;  /* IMPORTANT: stops border causing overflow */
-        overflow: hidden;
-      
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+    .hero-image {
+          background-image: url("/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.jpg");
+          background-size: cover; /* Ensures the image covers the entire container */
+          background-position: center; /* Centers the image */
+          background-repeat: no-repeat; /* Prevents the image from repeating */
+          width: 100%; /* Ensures the image spans the full width of the viewport */
+          height: 80vh; /* Reduce height to 60% of the viewport height */
+          position: relative; /* Allows positioning of the text */
+          overflow: hidden; /* Prevents content overflow */
+          margin: 0; /* Removes any default margins */
+          padding: 20px; /* Adds padding inside the hero image */
+          border: 5px solid #6b7623; /* Adds a border around the hero image */
+          box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
+          border-radius: 10px; /* Optional: Adds rounded corners to the border */
       }
-      
-      
+
       .hero-text {
         position: fixed;
         top: 50%;
@@ -240,7 +239,7 @@
       ========================= */
    
    .form-container {
-     max-width: 400px;
+     max-width: 500px;
      margin: 50px auto;
      padding: 20px;
    

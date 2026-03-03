@@ -1,0 +1,328 @@
+/* =========================
+   GLOBAL RESET & BASE
+   ========================= */
+
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+   }
+   
+   body {
+     margin: 0;
+     font-family: 'Lato', sans-serif;
+     color: #333;
+     padding-bottom: 120px; /* space for fixed footer */
+   }
+   
+   h1, h2, h3, h4, h5, h6 {
+     font-weight: 700;
+     margin-top: 0;
+   }
+   
+   p {
+     line-height: 1.6;
+   }
+   
+   a {
+     color: inherit;
+     text-decoration: none;
+   }
+   
+   /* =========================
+      NAVBAR
+      ========================= */
+   
+   .navbar {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 10;
+   
+     background-color: #65362d;
+     color: #fff;
+     padding: 20px 0;
+   }
+   
+   .navbar-brand {
+     font-size: 2rem;
+     font-weight: 700;
+   }
+   
+   .navbar .nav-link {
+     font-size: 1.5rem;
+     font-weight: 500;
+   }
+   
+   /* =========================
+      HERO SECTION (FLEX ONLY)
+      ========================= */
+
+    .hero-image {
+          background-image: url("/static/assets/images/james-barker-v3-zcCWMjgM-unsplash.0a8917d1da66.jpg");
+          background-size: cover; /* Ensures the image covers the entire container */
+          background-position: center; /* Centers the image */
+          background-repeat: no-repeat; /* Prevents the image from repeating */
+          width: 100%; /* Ensures the image spans the full width of the viewport */
+          height: 80vh; /* Reduce height to 60% of the viewport height */
+          position: relative; /* Allows positioning of the text */
+          overflow: hidden; /* Prevents content overflow */
+          margin: 0; /* Removes any default margins */
+          padding: 20px; /* Adds padding inside the hero image */
+          border: 5px solid #6b7623; /* Adds a border around the hero image */
+          box-sizing: border-box; /* Ensures padding and border are included in the element's dimensions */
+          border-radius: 10px; /* Optional: Adds rounded corners to the border */
+      }
+
+      .hero-text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      
+        max-width: 800px;
+        padding: 1.5rem;
+      
+        text-align: center;
+        color: #fff;
+        font-size: 1.5rem;
+      
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        z-index: 5;
+      }
+      
+   
+   /* =========================
+      CARD LAYOUT (FLEX GRID)
+      ========================= */
+   
+   .card-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+   
+     padding: 40px 20px;
+   }
+   
+   .card {
+     display: flex;
+     flex-direction: column;
+   
+     flex: 1 1 280px;
+     max-width: 400px;
+   
+     padding: 16px;
+     background-color: #fff;
+   
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+   
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+   }
+   
+   .card img {
+     width: 100%;
+     height: 200px;
+     object-fit: cover;
+   
+     border-radius: 8px;
+     margin-bottom: 15px;
+   }
+   
+   .card-title {
+     font-size: 1.5rem;
+     font-weight: bold;
+   }
+   
+   .card-subtitle {
+     font-size: 1rem;
+     color: #6c757d;
+     margin-bottom: 8px;
+   }
+   
+   .card-text {
+     font-size: 1rem;
+     flex-grow: 1;
+   }
+   
+   /* =========================
+      ABOUT PAGE
+      ========================= */
+   
+   .about-page {
+     max-width: 800px;
+     margin: 40px auto;
+     padding: 20px;
+   }
+   
+   .about-page section {
+     margin-bottom: 40px;
+     padding: 20px;
+   
+     background-color: #dcb0a5;
+     border-radius: 10px;
+   }
+   
+   .about-page h1,
+   .about-page h2 {
+     color: #65362d;
+   }
+   
+   .about-page p {
+     font-size: 1.1rem;
+     color: #333;
+   }
+   
+   /* =========================
+      HIGHLIGHT / COMPETITION
+      ========================= */
+   
+   .about-comp {
+     max-width: 800px;
+     margin: 40px auto;
+     padding: 30px;
+   
+     background-color: #ffd700;
+     color: #65362d;
+     text-align: center;
+   
+     border: 3px solid #65362d;
+     border-radius: 15px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+   }
+   
+   .about-comp h2 {
+     font-size: 2rem;
+     margin-bottom: 20px;
+   }
+   
+   .about-comp p {
+     font-size: 1.2rem;
+   }
+   
+   /* =========================
+      DROPDOWN
+      ========================= */
+   
+   .dropdown-toggle {
+     background-color: #65362d;
+     color: #fff;
+     border: none;
+   
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   
+   .dropdown-toggle:hover {
+     background-color: #4a2a1f;
+   }
+   
+   .dropdown-content {
+     display: none;
+     margin-top: 10px;
+     padding: 10px;
+   
+     background-color: #f9f9f9;
+     border-radius: 5px;
+   }
+   
+   /* =========================
+      FORMS
+      ========================= */
+   
+   .form-container {
+     max-width: 500px;
+     margin: 50px auto;
+     padding: 20px;
+   
+     background-color: #dcb0a5;
+     border-radius: 20px;
+     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+   }
+   
+   .form-group {
+     margin-bottom: 15px;
+   }
+   
+   .form-group label {
+     display: block;
+     margin-bottom: 5px;
+   }
+   
+   .form-control {
+     width: 40%;
+     padding: 10px;
+   
+     border: 1px solid #ccc;
+     border-radius: 5px;
+   }
+
+   .narrow-input {
+     width: 40px; /* Set a fixed width */
+     max-width: 40%; /* Ensure it doesn't exceed the container */
+   }
+   
+   /* =========================
+      FOOTER
+      ========================= */
+   
+   footer {
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     height: 100px;
+   
+     background-color: #6b7623;
+     color: #fff;
+     text-align: center;
+   
+     padding: 20px;
+     z-index: 10;
+   }
+   
+   footer i {
+     font-size: 3rem;
+     margin: 0 5px;
+   }
+   
+   /* =========================
+      RESPONSIVE TWEAKS ONLY
+      ========================= */
+   
+   @media (max-width: 768px) {
+     .navbar-brand {
+       font-size: 1.4rem;
+     }
+   
+     .navbar .nav-link {
+       font-size: 1.2rem;
+     }
+   
+     .hero-text {
+       font-size: 1.2rem;
+     }
+   }
+   
+   @media (max-width: 480px) {
+     .hero-image {
+       border: none;
+       border-radius: 0;
+       max-height: 50vh;
+     }
+   
+     .hero-text {
+       font-size: 1rem;
+     }
+   
+     .card img {
+       height: 150px;
+     }
+   }

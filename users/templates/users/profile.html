@@ -4,8 +4,19 @@
 <!-- -->
 {% block content %}
 <div class="form-container">
-  <h1>{{ user.username}}</h1>
-</div>
 
-<!-- -->
+  <h1>{{ user.username }}'s Profile</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    <button type="submit" class="btn btn-primary">
+      Update Profile
+    </button>
+
+  </form>
+
+</div>
 {% endblock content %}

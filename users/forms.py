@@ -3,6 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
+from .models import Vaccination
 
 class UserRegisterForm(UserCreationForm):
   email = forms.EmailField()
@@ -18,7 +19,14 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = [
             "pet_name",
             "pet_age",
-            "vaccinations",
-            "vaccination_date",
             "animal_health_certificate_valid_until"
+        ]
+    
+class VaccinationForm(forms.ModelForm):
+    
+    class Meta:
+            model = Vaccination
+            fields = [
+            "vaccine_type", 
+            "date_given"
         ]
